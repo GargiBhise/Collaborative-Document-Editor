@@ -23,7 +23,9 @@ const Home = () => {
                     </span>
                 </div>
             </div>
-            
+            <footer>
+                <h4>Developed by <a href="https://github.com/GargiBhise/Collaborative-Document-Editor"> Gargi Bhise</a></h4>
+            </footer>
         </div>
     )
 }
