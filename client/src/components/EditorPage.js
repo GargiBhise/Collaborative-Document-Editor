@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import "./styles.css";
+import { useParams } from 'react-router-dom';
 
 const TOOLBAR_OPTIONS = [
     [{header:[1,2,3,4,5,6, false]}],
@@ -15,23 +16,14 @@ const TOOLBAR_OPTIONS = [
     ["clean"],
 ];
 
-
-
 export default function EditorPage() {
-  // Create and manage editor instance. 
-  //Creates a fresh editor container each time
+    const { roomId } = useParams();
   const wrapperRef = useCallback(wrapper => {
-    // Cleanup on unmount ("hey, this component is being removed, let's clean up after ourselves!")
     if (wrapper === null) return
-  
-    // Reset container
     wrapper.innerHTML = ""
-    // Create editor element
     const editor = document.createElement("div")
     wrapper.append(editor)
-    // Initialize Quill
-    new Quill(editor, { theme: "snow", modules: {toolbar: TOOLBAR_OPTIONS} })
-  }, []) // Empty deps array = run once
-
+    new Quill(editor, { theme: "snow", modules: { toolbar: TOOLBAR_OPTIONS } })
+  }, [])
   return <div className="container" ref={wrapperRef}></div>
 }
