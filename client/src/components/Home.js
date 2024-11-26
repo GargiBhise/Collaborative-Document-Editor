@@ -10,12 +10,13 @@ const Home = () => {
                     <input type = "text" 
                     className="inputBox" 
                     placeholder="ROOM ID" />
-
+                    <br/>
                     <input type = "text" 
                     className="inputBox" 
                     placeholder="USERNAME" />
-
+                    <br/>
                     <button className="btn joinBtn">Join</button> 
+                    <br/>
                     <span className="createInfo">
                         If you don't have an invite then create &nbsp;
                         <a href="" className="createNewBtn">
